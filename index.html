@@ -1,79 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amir Jafari | Academic Profile</title>
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --paper: #ffffff;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --accent: #315a72;
+      --accent-soft: #e6eef2;
+      --warm: #c98960;
+    }
 
-        h1 {
-            color: #333;
-            text-align: center;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        p {
-            text-align: left;
-        }
-    </style>
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0 30px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: center;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 44px;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 1.02;
+      margin: 0 0 18px;
+      letter-spacing: -0.05em;
+    }
+
+    .subtitle {
+      font-size: 1.28rem;
+      color: var(--accent);
+      font-weight: 650;
+      margin-bottom: 18px;
+    }
+
+    .summary {
+      max-width: 720px;
+      color: #334155;
+      font-size: 1.04rem;
+      margin-bottom: 26px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 11px 17px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .profile-card {
+      background: linear-gradient(180deg, #f8fafc, #ffffff);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 18px;
+    }
+
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      object-fit: cover;
+      display: block;
+      background: #dbe4ea;
+    }
+
+    .photo-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    section {
+      margin-top: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 34px;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      margin: 0 0 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .card p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .image-tile {
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #eef2f7;
+    }
+
+    .image-tile img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      padding: 12px 14px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      background: #fff;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      background: #f1f5f9;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 0.88rem;
+      color: #334155;
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 34px 0 16px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero,
+      .grid,
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 26px;
+      }
+
+      section {
+        padding: 24px;
+      }
+
+      .page {
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Introduction</h1>
-        <p>Now, I'm investigating CRPS patients using EEG-128ch to understand 
-            changes in their brain's electrical activity in response to treatment using the oddball paradigm,
-            particularly with regard to rare and frequent stimuli. Additionally, I'm intrigued by exploring the time-series 
-            properties of biological data, which has been an integral part of my learning journey. I'm examining how data behave
-            in various contexts, whether it involves observing animal behavior in a controlled environment or etc.</p>
-        <h2>Disciplines</h2>
-        <ul>
-            <li>Neuroscience</li>
-        </ul>
-        <h2>Skills and expertise</h2>
-        <ul>
-            <li>Animal Behavior</li>
-            <li>Python</li>
-            <li>Wavelet Transform</li>
-            <li>Addiction Research</li>
-            <li>Cell Culture</li>
-            <li>Chemical Biology</li>
-            <li>Nanomaterials</li>
-            <li>Regenerative Medicine</li>
-            <li>Biomaterials</li>
-            <li>Drug Abuse</li>
-            <li>Applied Artificial Intelligence</li>
-            <li>Addictive Behaviors</li>
-            <li>Cryostat Sectioning</li>
-            <li>Quantitative Western Blot</li>
-            <li>Signal Processing</li>
-            <li>Animal Tracking</li>
-            <li>EEG/ERP</li>
-        </ul>
-        <h2>Languages</h2>
-        <ul>
-            <li>Portuguese</li>
-            <li>English</li>
-            <li>Azerbaijani</li>
-            <li>Persian</li>
-        </ul>
-    </div>
-</body>
+  <div class="page">
 
+    <header>
+      <div class="brand">Amir Jafari</div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <div class="hero">
+        <div>
+          <span class="eyebrow">Behavioral Neuroscience · EEG/ERP · Computational Analysis</span>
+
+          <h1>Amir Jafari</h1>
+
+          <div class="subtitle">
+            Multidisciplinary researcher working across neuroscience, animal behavior,
+            signal analysis, and biomedical science.
+          </div>
+
+          <p class="summary">
+            I study how biological systems change across development, treatment, and behavioral context.
+            My work connects animal behavior, addiction research, EEG/ERP, medical nanotechnology,
+            and data-driven approaches to complex biological signals.
+          </p>
+
+          <div class="buttons">
+            <a class="button primary" href="#research">View research focus</a>
+            <a class="button" href="files/Amir_Jafari_CV.pdf">Download CV</a>
+            <a class="button" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <!-- THIS IS YOUR PROFILE PICTURE SECTION -->
+        <!-- Upload your picture as: assets/profile.jpg -->
+        <aside class="profile-card">
+          <img
+            class="profile-photo"
+            src="assets/profile.jpg"
+            alt="Amir Jafari profile photo"
+          />
+          <div class="photo-note">Amir Jafari</div>
+        </aside>
+      </div>
+
+      <section id="about">
+        <h2>About</h2>
+
+        <p>
+          My academic background spans chemistry, medical nanotechnology, neuroscience,
+          and behavioral analysis. I am particularly interested in addiction-related behavior,
+          developmental exposure, neural signal processing, and quantitative methods for
+          understanding biological data.
+        </p>
+      </section>
+
+      <section id="research">
+        <h2>Research Focus</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Behavioral neuroscience</h3>
+            <p>
+              Animal behavior, addiction-related phenotypes, anxiety-like behavior,
+              reward, and treatment-related behavioral changes.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>EEG/ERP and signal analysis</h3>
+            <p>
+              High-density EEG, oddball paradigms, time-series analysis,
+              and biological signal interpretation.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Computational biology</h3>
+            <p>
+              Python-based analysis, machine learning interests, statistical modeling,
+              and quantitative biological data workflows.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h2>Research and Profile Gallery</h2>
+
+        <p class="muted">
+          These are temporary image blocks. Later you can replace them with your portrait,
+          lab images, animal behavior setup, EEG setup, conference photos, or figures from your work.
+        </p>
+
+        <div class="image-grid">
+
+          <div class="image-tile">
+            <img
+              alt="Laboratory placeholder"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='675' viewBox='0 0 900 675'%3E%3Crect width='900' height='675' fill='%23e6eef2'/%3E%3Cpath d='M120 540h660M180 180h180v360H180zM420 250h260v290H420z' stroke='%23315a72' stroke-width='18' fill='none'/%3E%3Ccircle cx='530' cy='360' r='55' fill='%23c98960' opacity='.8'/%3E%3Ctext x='450' y='620' text-anchor='middle' font-family='Arial' font-size='36' fill='%23315a72'%3ELab / research photo%3C/text%3E%3C/svg%3E"
+            />
+            <div class="caption">Placeholder 1: lab or research environment</div>
+          </div>
+
+          <div class="image-tile">
+            <img
+              alt="EEG placeholder"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='675' viewBox='0 0 900 675'%3E%3Crect width='900' height='675' fill='%23f5efe8'/%3E%3Cpath d='M170 420c100-210 460-210 560 0' fill='none' stroke='%23315a72' stroke-width='18'/%3E%3Cpath d='M250 420h400M300 350h300M360 285h180' stroke='%23c98960' stroke-width='14'/%3E%3Ccircle cx='450' cy='420' r='110' fill='none' stroke='%23315a72' stroke-width='14'/%3E%3Ctext x='450' y='620' text-anchor='middle' font-family='Arial' font-size='36' fill='%23315a72'%3EEEG / signal analysis%3C/text%3E%3C/svg%3E"
+            />
+            <div class="caption">Placeholder 2: EEG, ERP, or computational work</div>
+          </div>
+
+          <div class="image-tile">
+            <img
+              alt="Conference placeholder"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='675' viewBox='0 0 900 675'%3E%3Crect width='900' height='675' fill='%23eef2f7'/%3E%3Crect x='150' y='150' width='600' height='330' rx='24' fill='white' stroke='%23315a72' stroke-width='16'/%3E%3Cpath d='M230 250h280M230 320h420M230 390h340' stroke='%23c98960' stroke-width='18'/%3E%3Ccircle cx='650' cy='250' r='45' fill='%23315a72' opacity='.85'/%3E%3Ctext x='450' y='620' text-anchor='middle' font-family='Arial' font-size='36' fill='%23315a72'%3EConference / presentation%3C/text%3E%3C/svg%3E"
+            />
+            <div class="caption">Placeholder 3: conference, poster, or presentation</div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Selected Skills</h2>
+
+        <div class="tags">
+          <span class="tag">Animal behavior</span>
+          <span class="tag">Addiction research</span>
+          <span class="tag">EEG/ERP</span>
+          <span class="tag">Python</span>
+          <span class="tag">Time-series analysis</span>
+          <span class="tag">Signal processing</span>
+          <span class="tag">Machine learning</span>
+          <span class="tag">Cell culture</span>
+          <span class="tag">Nanomaterials</span>
+          <span class="tag">Statistical analysis</span>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+
+        <p>
+          Email:
+          <a href="mailto:your.email@example.com">your.email@example.com</a>
+        </p>
+
+        <p>
+          CV:
+          <a href="files/Amir_Jafari_CV.pdf">Download Amir Jafari CV</a>
+        </p>
+
+        <p class="muted">
+          Later you can add Google Scholar, ORCID, LinkedIn, GitHub, and institutional links here.
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      © Amir Jafari · Academic profile website
+    </footer>
+
+  </div>
+</body>
 </html>
